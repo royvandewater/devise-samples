@@ -7,10 +7,30 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if user_signed_in? -%>
+          <li><%= link_to "Sign out", destroy_user_session_path %></li>
+        <% else -%>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end -%>
+      </ul>
+      <div class="clearboth"></div>
+    </nav>
 
-<%= yield %>
+    <div id="content">
+      <% if notice.present? -%>
+        <p class="notice"><%= notice %></p>
+      <% end -%>
 
+      <% if alert.present? -%>
+        <p class="alert"><%= alert %></p>
+      <% end -%>
+
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

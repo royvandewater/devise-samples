@@ -1,0 +1,17 @@
+html,body { height: 100%; }
+div#wrapper { width: 960px; height: 100%; margin: 2em auto; border: 1px solid #ddd; }
+
+.clearboth { clear: both; }
+
+/* Navigation bar */
+nav { margin: 3em auto auto 3em; }
+nav ul li { float: left; margin-right: 1em; }
+
+/* Flash messages */
+p.alert,p.notice { color: white; font-weight: bold; width: 400px; margin: 1em auto; padding: 0.7em; text-align: center}
+p.alert { background: #c00; }
+p.notice { background: #0a0; }
+
+
+/* Content */
+div#content { margin: 3em auto auto 3em; }
