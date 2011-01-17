@@ -11,5 +11,16 @@
 </p>
 
 
+<p>
+  <b>Authentication Token</b>
+  <%= @user.authentication_token %>
+  <br />
+  You can login as this user by going to the following url: <%= root_url :auth_token => @user.authentication_token %>
+  <%= button_to "Reset Authentication Token", reset_authentication_token_user_path(@user), :method => :put %>
+</p>
+
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

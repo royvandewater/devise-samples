@@ -45,6 +45,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_authentication_token
+    @user.reset_authentication_token!
+    redirect_to user_path(@user)
+  end
+
 
   protected
   def find_user
