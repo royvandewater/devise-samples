@@ -1,3 +1,4 @@
+require "devise/encryptors/rot13"
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -43,7 +44,7 @@ Devise.setup do |config|
   # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
   # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :bcrypt
+  config.encryptor = :rot13
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = "134e43f048452b5b71dba38efbcf405ca9f5994f5a4a708d283a712da12c4dfc7c8bbd53fb9655fe60f2afcd11eeaad481f38e6a71929dae53711767d0ac04ab"
