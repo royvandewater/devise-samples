@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   protected
   def find_user
     @user = User.find(params[:id])
