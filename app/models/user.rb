@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable
 
+  def after_token_authentication
+    update_attributes :authentication_token => nil
+  end
 end
