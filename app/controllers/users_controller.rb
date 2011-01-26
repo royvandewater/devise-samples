@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :require_user_or_employee!
   before_filter :find_user, :except => [:index]
   
   def index
