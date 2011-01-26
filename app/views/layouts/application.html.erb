@@ -15,7 +15,16 @@
           <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path %></li>
         <% else -%>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <%= form_for(:user, :url => user_session_path) do |f| %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+
+            <%= f.submit "Sign in" %>
+          <% end %>
         <% end -%>
       </ul>
       <div class="clearboth"></div>
